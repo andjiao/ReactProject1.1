@@ -10,7 +10,6 @@ import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
-  genres: Genre[] | []
   genre: Genre | null
   platform: Platform| null
   sortOrder:string
@@ -35,9 +34,7 @@ function App() {
     </GridItem>
     <Show above="lg">
     <GridItem area="aside" paddingX={5}>
-      <GenreList 
-      selectedGenre={gameQuery.genre} 
-      onSelectGenre={genres => setGameQuery({...gameQuery, genres})}/>
+      <GenreList selectedGenre={gameQuery.genre} onSelectGenre={genre => setGameQuery({...gameQuery, genre})}/>
       </GridItem>
     </Show>
     <GridItem area="main">
